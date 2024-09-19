@@ -1,0 +1,46 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+next-saas-starter/node_modules
+/node_modules
+next-saas-starter/.pnp
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+next-saas-starter/coverage
+/coverage
+# next.js
+next-saas-starter/.next/
+.next/
+next-saas-starter/out/
+/out/
+
+# production
+next-saas-starter/build
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+.vscode
+
+# Docker
+postgres_data/
+next-saas-starter/.docker/
