@@ -88,8 +88,10 @@ export async function GET(request: NextRequest) {
       })
       .where(eq(teams.id, userTeam[0].teamId));
 
-    await setSession(user[0]);
-    return NextResponse.redirect(new URL('/dashboard', request.url));
+      const sessionCookie = await setSession(user[0]);
+      const response = NextResponse.next();
+      response.headers.set('Set-Cookie', sessionCookie);
+      return response;
   } catch (error) {
     console.error('Error handling successful checkout:', error);
     return NextResponse.redirect(new URL('/error', request.url));
